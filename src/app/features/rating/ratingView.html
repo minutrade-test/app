@@ -1,0 +1,39 @@
+<div class="scrollable" fill layout="column" layout-align="center center">
+    <div class="p-{{padding}} s-150" fill layout="row" layout-align="center center">
+        <div><img src="assets/images/world.png" style="width:64px"></div>
+        <div class="m-l-{{padding}}">Classifique suas viagens</div>
+    </div>
+    <div layout="row" layout-align="center start">
+	    <div class="bg-white md-whiteframe-z1 m-b-{{padding}} p-h-{{padding}} p-t-{{padding}}" flex-gt-lg="50" flex-lg="60" flex-md="80" flex-sm="90" layout="row" layout-align="start start"  layout-wrap>
+	        <div class="m-b-{{padding}} s-110" fill layout="row" layout-align="start center" ng-repeat="trip in trips">
+	            <div class="">{{trip.from_date | date : "dd/MM/yyyy"}}</div>
+	            <div flex class="m-h-{{padding}}" layout="column">
+	            	<div layout="row">
+	            		<div class="w-32">
+	            			<md-icon class="size-32 color-blue" md-svg-src="assets/images/icons/takeoff.svg"></md-icon>
+            			</div>
+	            		<div class="m-l-8" layout="row" layout-align="start center">
+	            			{{trip.from_place.name}}
+            			</div>
+	            		
+	            	</div>
+	            	<div class="m-t-4" layout="row">
+	            		<div class="w-32">
+	            			<md-icon class="size-32 color-blue" md-svg-src="assets/images/icons/land.svg">
+	            		</div>
+	            		<div class="m-l-8" layout="row" layout-align="start center">
+	            			{{trip.to_place.name}}
+	            		</div>
+	            	</div>
+	            </div>
+	            <div>
+	            	<rating data="trip" action="rating.action"></rating>
+	            </div>
+	        </div>
+		</div>
+    </div>
+
+    <md-button ng-click="logout();" class="md-fab md-fab-bottom-right bg-blue" aria-label="Logout" ng-click="checkLogin()">
+        <md-icon class="size-24 color-white" md-svg-src="assets/images/icons/exit.svg">
+    </md-button>
+</div>

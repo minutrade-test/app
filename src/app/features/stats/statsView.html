@@ -1,0 +1,40 @@
+<div class="scrollable" fill layout="column" layout-align="center center">
+    <div class="p-32 s-150" fill layout="row" layout-align="center center">
+        <div><img src="assets/images/chart.png" style="width:64px"></div>
+        <div class="m-l-32 bold">VOTOS DOS USUÁRIOS</div>
+    </div>
+    <div layout="row" layout-align="center start" layout-wrap>
+	    <div class="bg-white md-whiteframe-z1 m-b-32 p-h-32 p-t-32 m-h-16" flex-gt-lg="35" flex-lg="40" flex-md="60" flex-sm="80"   layout="row" layout-align="start start"  layout-wrap>
+	        
+	        <div class="m-b-32 s-120" fill layout="row" layout-align="center center">
+				<div flex class="bold" layout="row" layout-align="center center">TOP 5 MELHORES DESTINOS</div>
+	        </div>
+	        <div class="m-b-32 s-120" fill layout="row" layout-align="start center" ng-repeat="trip in topRated">
+	            <div>
+            		<md-icon class="size-32 color-green" md-svg-src="assets/images/icons/mood.svg">
+
+	            </div>
+	            <div flex class="m-l-32">{{trip.place.name}}</div>
+	            <div class="m-h-32 s-130 color-green bold">{{trip.total_score}}</div>
+	        </div>
+		</div>
+
+	    <div class="bg-white md-whiteframe-z1 m-b-32 p-h-32 p-t-32 m-h-16" flex-gt-lg="35" flex-lg="40" flex-md="60" flex-sm="80"  layout="row" layout-align="start start"  layout-wrap>
+	        <div class="m-b-32 s-120" fill layout="row" layout-align="start center">
+				<div flex class="bold" layout="row" layout-align="center center">TOP 5 PIORES DESTINOS</div>
+	        </div>
+	        <div class="m-b-32 s-120" fill layout="row" layout-align="start center" ng-repeat="trip in underRated">
+	            <div>
+            		<md-icon class="size-32 color-red" md-svg-src="assets/images/icons/mood_bad.svg">
+	            </div>
+	            <div flex class="m-l-32">{{trip.place.name}}</div>
+	            <div class="m-h-32 color-red s-130 bold">{{trip.total_score}}</div>
+	        </div>
+		</div>
+
+    </div>
+
+    <md-button ng-click="logout();" class="md-fab md-fab-bottom-right bg-blue" aria-label="Logout" ng-click="checkLogin()">
+        <md-icon class="size-24 color-white" md-svg-src="assets/images/icons/exit.svg">
+    </md-button>
+</div>

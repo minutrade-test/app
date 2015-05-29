@@ -1,0 +1,42 @@
+<div layout="row" fill flex layout-align="center center">
+    <div class="bg-white md-whiteframe-z1 p-32" flex-sm="90" flex-md="80" flex-lg="50" flex-gt-lg="40" layout="row" layout-align="start start" id="login"  layout-wrap>
+
+        <div fill layout="row" layout-align="center center" ng-if="mode=='client'" class="s-130 bold">
+            Acesse sua conta
+        </div>
+        <div fill layout="row" layout-align="center center" ng-if="mode=='admin'" class="s-130 bold">
+            Administrativo
+        </div>
+        <div fill layout="row" layout-align="start center" class="m-v-32">
+
+            <div class="w-128"> 
+                <img src="assets/images/logo.png"/>
+            </div>
+            <div class="m-l-32" layout="column" layout-align="start start" flex>
+                <div fill layout="row" layout-align="center center">
+                    <md-input-container class="fill-horizontal">
+                        <label>E-mail</label>
+                        <input type="text" ng-enter="checkLogin()" ng-model="formData.email" required />
+                    </md-input-container>
+                </div>
+                <div ng-if="mode=='admin'" fill layout="row" layout-align="center center">
+                    <md-input-container class="fill-horizontal">
+                        <label>Senha</label>
+                        <input type="text" ng-enter="checkLogin()" ng-model="formData.password" required />
+                    </md-input-container>
+                </div>
+                <div ng-if="mode=='client'" fill layout="row" layout-align="center center">
+                    <md-input-container class="fill-horizontal">
+                        <label>CPF</label>
+                        <input type="text" ng-enter="checkLogin()" id="cpf"  cpf-mask ng-model="formData.cpf" required />
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+        <div fill layout="row" layout-align="end center">
+            <md-button class="md-fab fixed bg-green" aria-label="{{label}}" ng-click="checkLogin()">
+                <md-icon class="size-24 color-white" md-svg-src="assets/images/icons/done.svg">
+            </md-button>
+        </div>
+    </div>
+</div>

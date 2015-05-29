@@ -1,0 +1,9 @@
+<div layout="row" fill>
+	<div class="p-h-8 pointer" ng-repeat="level in levels track by $index" ng-click="rate($index + 1)" ng-mouseover="showHover($index)" ng-mouseleave="clearHover()">
+		<md-icon class="size-32 color-yellow" md-svg-src="assets/images/icons/star_outline.svg" ng-show="$index>=data.score && !hover[$index]">
+		</md-icon>
+		<md-icon class="size-32 color-yellow" md-svg-src="assets/images/icons/star.svg" ng-show="$index<data.score || hover[$index]" >
+		</md-icon>
+	</div>
+
+</div>
